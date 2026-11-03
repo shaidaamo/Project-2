@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>Add a New Book!</h1>
+    <form action="" method="post">
+       <label for="title">Book Title: </label>
+        <input name="title" id="title" type="text">
+
+        <label for="cover">Book Cover Picture: </label>
+        <input name="cover" id="cover" type="file">
+
+        <label for="type">Type: </label>
+        <input name="type" id="type" type="text">
+
+        <label for="author">author: </label>
+        <input name="author" id="author" type="text">
+
+        <label for="status">status: </label>
+        <input name="status" id="status" type="text">
+
+        <label for="summary">Summary: </label>
+        <input name="summary" id="summary" type="text">
+
+        <button>Add Book</button>
+    </form>
+
+</body>
+</html>
