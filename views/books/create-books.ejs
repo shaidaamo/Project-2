@@ -13,16 +13,24 @@
         <input name="title" id="title" type="text">
 
         <label for="cover">Book Cover Picture: </label>
-        <input name="cover" id="cover" type="file">
+        <input name="cover" id="cover" type="url" placeholder="Enter Image URL">
 
         <label for="type">Type: </label>
-        <input name="type" id="type" type="text">
+        <select name="type" id="type">
+            <option>E-book</option>
+            <option>Audio book</option>
+            <option>Paperback</option>
+        </select>
 
         <label for="author">author: </label>
         <input name="author" id="author" type="text">
 
         <label for="status">status: </label>
-        <input name="status" id="status" type="text">
+        <select name="status" id="status">
+            <option>To Read</option>
+            <option>Reading</option>
+            <option>Finished Reading</option>
+        </select>
 
         <label for="summary">Summary: </label>
         <input name="summary" id="summary" type="text">

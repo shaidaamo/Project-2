@@ -8,13 +8,17 @@ router.get('/new', isSignedIn,(req,res)=>{
 router.post('/',isSignedIn, async (req,res)=>{
     const createdBook = await Book.create({
         title: req.body.title,
+        Cover: req.body.cover,
         Type: req.body.type,
         Author: req.body.author,
         Status: req.body.status,
-        Summary: req.body.summary,
+        Summary: req.body.summary
     })
     res.redirect('/books')
 })
-
+router.get('/',isSignedIn,async(req,res)=>{
+    const allbooks = await Book.find()
+    res.render('books/index.ejs',{books: allbooks})
+})
 
 module.exports = router;
