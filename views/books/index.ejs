@@ -14,6 +14,9 @@
         <p>By <%= oneBook.Author %></p>
         <p>Summary: <%= oneBook.Summary %> </p>
         <p>Status: <%= oneBook.Status %></p>
+        <% if(String(oneBook.Status) === 'Finished Reading'){ %>
+            <a href="/books/<%= oneBook._id %>/newReview">Write A Review</a>
+        <% } %>
 
     <% } %>
 
