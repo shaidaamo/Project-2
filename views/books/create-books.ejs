@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>Add a New Book!</h1>
-    <form action="" method="post">
+    <form action="/books" method="post">
        <label for="title">Book Title: </label>
         <input name="title" id="title" type="text">
 
@@ -26,7 +26,7 @@
 
         <label for="summary">Summary: </label>
         <input name="summary" id="summary" type="text">
-
+        
         <button>Add Book</button>
     </form>
 
