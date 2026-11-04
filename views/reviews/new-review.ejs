@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <%- include('../partials/navbar') %>
+    <h1>Write A Review!</h1>
+        <form action="/reviews/<%= book._id %>" method="post">
+       <label for="Rating">Rating: </label>
+        <input name="Rating" id="Rating" type="number" max="5" min="0">
+
+        <label for="reviewText">Review: </label>
+        <input name="reviewText" id="reviewText">
+
+        <label for="isPublic">Public or not: </label>
+        <input name="isPublic" id="isPublic" type="checkbox">
+
+        <button>Add Review</button>
+    </form>
+
+
+</body>
+</html>

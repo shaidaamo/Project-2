@@ -15,8 +15,9 @@ const bookSchema = new mongoose.Schema({
   Author: {
     type: String
   },
-  Status: {
-    type: String
+  StatusRightnow: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Status'
   },
   Summary: {
     type: String

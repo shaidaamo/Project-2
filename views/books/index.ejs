@@ -7,17 +7,20 @@
 </head>
 <body>
     <%- include('../partials/navbar') %>
-    <h1>All Books Availabe</h1>
+    <h1>All Books</h1>
     <% for(let oneBook of books){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
         <p>By <%= oneBook.Author %></p>
         <p>Summary: <%= oneBook.Summary %> </p>
-        <p>Status: <%= oneBook.Status %></p>
-        <% if(String(oneBook.Status) === 'Finished Reading'){ %>
-            <a href="/books/<%= oneBook._id %>/newReview">Write A Review</a>
+        <% if(user._id == oneBook.StatusRightnow.owner){ %> 
+        <p>Status: <%= oneBook.StatusRightnow.statusType %></p>
+        <% if(String(oneBook.StatusRightnow.statusType) === 'Finished Reading'){ %>
+            <a href="/reviews/<%= oneBook._id %>/newReview">Write A Review</a>
+         <% }else if(oneBook.Review != []){ %>
+            <a href=""></a>
+            <% } %>
         <% } %>
-
     <% } %>
 
 </body>
