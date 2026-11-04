@@ -30,4 +30,22 @@ router.get('/',isSignedIn, async (req,res)=>{
     res.render('reviews/index.ejs',{allbooks: book})
 })
 
+    
+router.delete('/:reviewId', isSignedIn, async (req, res) => {
+    const review = await Review.findById(req.params.reviewId)
+    
+    if (!review.owner.equals(req.session.user._id)) {
+        return res.send("Action Not Allowed")
+    }
+    
+    await Book.updateOne({ Reviews: Review._id }, { $pull: { Reviews: Review._id } })
+
+    await Review.deleteOne()
+    
+    res.redirect('/reviews')
+})
+    
+   
+
+
 module.exports = router;

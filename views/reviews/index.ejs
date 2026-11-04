@@ -15,6 +15,12 @@
     <% for(let onereview of oneBook.Reviews){ %>
         <p>Rating: <%= onereview.Rating %> Out of 5</p>
         <p>Review: <%= onereview.reviewText %> By <%= onereview.owner.username %></p>
+        
+        <% if(onereview.owner._id == user._id){ %>
+         <form action="/reviews/<%= onereview._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Review</button>
+        </form>
+        <% } %>
         <% } %>
         <% } %>
 </body>

@@ -28,5 +28,4 @@ router.get('/',isSignedIn,async(req,res)=>{
     console.log(allbooks)
     res.render('books/index.ejs',{books:allbooks})
 })
-
 module.exports = router;
