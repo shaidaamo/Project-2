@@ -13,15 +13,15 @@
         <img src="<%= oneBook.Cover %>" width="200">
         <p>By <%= oneBook.Author %></p>
         <p>Summary: <%= oneBook.Summary %> </p>
-        <% if(user._id == oneBook.StatusRightnow.owner){ %> 
-        <p>Status: <%= oneBook.StatusRightnow.statusType %></p>
-        <% if(String(oneBook.StatusRightnow.statusType) === 'Finished Reading'){ %>
+        <% if(user._id == oneBook.owner){ %> 
+        <p>Status: <%= oneBook.StatusRightnow %></p>
+        <% if(String(oneBook.StatusRightnow) === 'Finished Reading'){ %>
             <a href="/reviews/<%= oneBook._id %>/newReview">Write A Review</a>
          <% }else if(oneBook.Review != []){ %>
             <a href=""></a>
             <% } %>
-            
         <% } %>
+        <a href="/books/<%= oneBook._id %>/edit">Update Your Book</a>
     <% } %>
 
 </body>

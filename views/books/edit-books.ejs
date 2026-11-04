@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <%- include('../partials/navbar') %>
+    <h1>Update Your Book!</h1>
+    <form action="/books/<%= books._id %>?_method=PUT" method="post">
+       <label for="title">Book Title: </label>
+        <input value="<%= books.title %>" name="title" id="title" type="text">
+
+        <label for="Cover">Book Cover Picture: </label>
+        <input value="<%= books.Cover %>" name="Cover" id="Cover" type="url" placeholder="Enter Image URL">
+
+        <label for="Type">Type: </label>
+        <select name="Type" id="Type">
+            <option value="E-book">E-book</option>
+            <option value="Audio book">Audio book</option>
+            <option value="Paperback">Paperback</option>
+        </select>
+
+        <label for="Author">Author: </label>
+        <input value="<%= books.Author %>"  name="Author" id="Author" type="text">
+
+        <label for="StatusRightnow">Status: </label>
+        <select name="StatusRightnow" id="StatusRightnow">
+            <option value="To Read">To Read</option>
+            <option value="Reading">Reading</option>
+            <option value="Finished Reading">Finished Reading</option>
+            <option value="Did Not Finish">Did Not Finish</option>
+        </select>
+
+        <label for="Summary">Summary: </label>
+        <input value="<%= books.Summary %>" name="Summary" id="Summary" type="text">
+        <button>Update Book</button>
+    </form>
+</body>
+</html>

@@ -8,9 +8,6 @@ const reviewSchema = new mongoose.Schema({
   reviewText: {
     type: String,
   },
-  isPublic: {
-    type: Boolean
-  },
   owner :{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'

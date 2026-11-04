@@ -9,11 +9,9 @@ router.get('/:bookId/newReview',isSignedIn, async (req,res)=>{
 })
 
 router.post('/:bookId',isSignedIn, async (req,res)=>{
-    req.body.isPublic = req.body.isPublic === 'on';
     const newReview = await Review.create({
         Rating: req.body.Rating,
         reviewText: req.body.reviewText,
-        isPublic: req.body.isPublic,
         owner: req.session.user._id,
     })  
     const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { $push: { Reviews: newReview._id } })

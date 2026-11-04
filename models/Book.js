@@ -16,8 +16,7 @@ const bookSchema = new mongoose.Schema({
     type: String
   },
   StatusRightnow: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Status'
+     type: String
   },
   Summary: {
     type: String
@@ -25,6 +24,10 @@ const bookSchema = new mongoose.Schema({
   Reviews :{
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'Review'
+  },
+  owner:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   }
 }, {timestamps: true});
 
