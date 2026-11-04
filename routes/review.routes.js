@@ -22,7 +22,10 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
 })
 
 router.get('/',isSignedIn, async (req,res)=>{
-    const book = await Book.find().populate('Reviews')
+    const book = await Book.find().populate({
+        path: 'Reviews',
+        populate: { path: 'owner', select: 'username' }
+    })
     console.log(book)
     res.render('reviews/index.ejs',{allbooks: book})
 })

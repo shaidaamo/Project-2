@@ -6,13 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+     <%- include('../partials/navbar') %>
+     <h1>Reviews Page</h1>
     <% for(let oneBook of allbooks){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
         <p>By <%= oneBook.Author %></p>
     <% for(let onereview of oneBook.Reviews){ %>
         <p>Rating: <%= onereview.Rating %> Out of 5</p>
-        <p>Review: <%= onereview.reviewText %></p>
+        <p>Review: <%= onereview.reviewText %> By <%= onereview.owner.username %></p>
         <% } %>
         <% } %>
 </body>
