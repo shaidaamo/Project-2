@@ -10,7 +10,7 @@
     <h1>Write A Review!</h1>
         <form action="/reviews/<%= book._id %>" method="post">
        <label for="Rating">Rating: </label>
-        <input name="Rating" id="Rating" type="number" max="5" min="0">
+       <input name="Rating" id="Rating" type="number" max="5" min="0" step="0.5">
 
         <label for="reviewText">Review: </label>
         <input name="reviewText" id="reviewText">

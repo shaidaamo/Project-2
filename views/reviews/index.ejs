@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% for(let oneBook of allbooks){ %>
+        <h3><%= oneBook.title %> </h3>
+        <img src="<%= oneBook.Cover %>" width="200">
+        <p>By <%= oneBook.Author %></p>
+    <% for(let onereview of oneBook.Reviews){ %>
+        <p>Rating: <%= onereview.Rating %> Out of 5</p>
+        <p>Review: <%= onereview.reviewText %></p>
+        <% } %>
+        <% } %>
+</body>
+</html>

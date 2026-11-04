@@ -16,14 +16,15 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
         isPublic: req.body.isPublic,
         owner: req.session.user._id,
     })  
-    const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { $push: { Review: newReview._id } })
+    const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { $push: { Reviews: newReview._id } })
     res.redirect('/reviews')
     console.log('updatedBook:', updatedBook);
 })
 
 router.get('/',isSignedIn, async (req,res)=>{
-    const book = await Book.findById(req.params.bookId)
-    res.render('reviews/index.ejs')
+    const book = await Book.find().populate('Reviews')
+    console.log(book)
+    res.render('reviews/index.ejs',{allbooks: book})
 })
 
 module.exports = router;
