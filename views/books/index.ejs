@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="../js/search-bar.js"></script>
 </head>
 <body>
     <%- include('../partials/navbar') %>
     <h1>All Books</h1>
-   
+   <input placeholder="Search" type="search" name="search" id="search-bar">
     <% for(let oneBook of books){ %>
+        <div class="book">
          <% if(user._id == oneBook.owner){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
@@ -30,6 +32,7 @@
         <br>
         <a href="/books/<%= oneBook._id %>/edit">Update Your Book</a>
     <% } %>
+</div>
 <% } %>
 </body>
 </html>

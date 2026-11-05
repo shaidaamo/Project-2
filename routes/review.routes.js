@@ -20,7 +20,7 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
 })
 
 router.get('/',isSignedIn, async (req,res)=>{
-    // filters the books that doesnt have a review, populate username since it wont appaer
+    // filters the books that doesnt have a review, populate username since it wont appaer with the normal way
     const book = await Book.find({
         Reviews: { $ne: null }
     }).populate({
