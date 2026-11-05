@@ -36,7 +36,7 @@ router.delete('/:reviewId', isSignedIn, async (req, res) => {
     if (!review.owner.equals(req.session.user._id)) {
         return res.send("Action Not Allowed")
     }
-// it filters the books with null reviews so it doesnt get included in the update so there will be an error
+// it update the books with null reviews 
     await Book.updateOne({ Reviews: review._id }, { $unset: { Reviews: "" } })
 // delete the review itself from database 
     await review.deleteOne()
@@ -48,6 +48,15 @@ router.get('/:reviewId/edit', isSignedIn, async (req, res) => {
     const review = await Review.findById(req.params.reviewId)
     res.render('reviews/edit-review.ejs',{allreviews:review})
 })
+
+router.put('/:reviewId', isSignedIn, async (req, res) => {
+    const updatedReview = await Review.findByIdAndUpdate(req.params.reviewId, req.body)
+    res.redirect('/reviews')
+})
+
+
+
+
 
     
 module.exports = router;

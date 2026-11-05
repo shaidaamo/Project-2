@@ -16,6 +16,7 @@
         <p>Review: <%= oneBook.Reviews.reviewText %> By <%= user.username %></p>
         
         <% if(oneBook.owner._id == user._id){ %>
+              <a href="/reviews/<%= oneBook.Reviews._id %>/edit">Edit Review</a>
          <form action="/reviews/<%= oneBook.Reviews._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Review</button>
         </form>
