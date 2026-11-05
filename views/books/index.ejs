@@ -8,7 +8,9 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>All Books</h1>
+   
     <% for(let oneBook of books){ %>
+         <% if(user._id == oneBook.owner){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
         <p>By <%= oneBook.Author %></p>
@@ -20,9 +22,14 @@
          <% }else if(oneBook.Review != []){ %>
             <a href=""></a>
             <% } %>
+            <br>
+             <form action="/books/<%= oneBook._id %>?_method=DELETE" method="post">
+                <button>Delete Book</button>
+            </form>
         <% } %>
+        <br>
         <a href="/books/<%= oneBook._id %>/edit">Update Your Book</a>
     <% } %>
-
+<% } %>
 </body>
 </html>

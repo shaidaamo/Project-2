@@ -3,7 +3,7 @@ const isSignedIn = require('../middleware/is-signed-in')
 const Book = require('../models/Book.js')
 const Review =  require('../models/Review.js')
 const User = require("../models/User.js");
-const Status = require("../models/Status.js");
+
 
 router.get('/new', isSignedIn,(req,res)=>{
     res.render('books/create-books.ejs')
@@ -35,6 +35,13 @@ router.put('/:bookId', isSignedIn, async(req,res)=>{
      const updatedBook = await Book.findByIdAndUpdate(req.params.bookId,req.body)
     res.redirect('/books')
     })
+router.delete('/:bookId',isSignedIn,async(req,res)=>{
+    const foundBook = await Book.findById(req.params.bookId)
+    if(Book.owner == req.session.user._id){
+        return res.send("Action Not Allowed")
+    }
+    await Book.findByIdAndDelete(req.params.bookId)
+    res.redirect('/books')
+})
 
-    
 module.exports = router;

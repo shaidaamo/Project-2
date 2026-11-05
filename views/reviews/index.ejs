@@ -12,15 +12,13 @@
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
         <p>By <%= oneBook.Author %></p>
-    <% for(let onereview of oneBook.Reviews){ %>
-        <p>Rating: <%= onereview.Rating %> Out of 5</p>
-        <p>Review: <%= onereview.reviewText %> By <%= onereview.owner.username %></p>
+        <p>Rating: <%= oneBook.Reviews.Rating %> Out of 5</p>
+        <p>Review: <%= oneBook.Reviews.reviewText %> By <%= user.username %></p>
         
-        <% if(onereview.owner._id == user._id){ %>
-         <form action="/reviews/<%= onereview._id %>?_method=DELETE" method="POST">
+        <% if(oneBook.owner._id == user._id){ %>
+         <form action="/reviews/<%= oneBook.Reviews._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Review</button>
         </form>
-        <% } %>
         <% } %>
         <% } %>
 </body>

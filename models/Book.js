@@ -22,7 +22,7 @@ const bookSchema = new mongoose.Schema({
     type: String
   },
   Reviews :{
-    type: [mongoose.Schema.Types.ObjectId],
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Review'
   },
   owner:{

@@ -14,36 +14,34 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
         reviewText: req.body.reviewText,
         owner: req.session.user._id,
     })  
-    const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { $push: { Reviews: newReview._id } })
+    // update the book reviews
+    const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { Reviews: newReview._id })
     res.redirect('/reviews')
     console.log('updatedBook:', updatedBook);
 })
 
 router.get('/',isSignedIn, async (req,res)=>{
-    const book = await Book.find().populate({
-        path: 'Reviews',
-        populate: { path: 'owner', select: 'username' }
-    })
-    console.log(book)
-    res.render('reviews/index.ejs',{allbooks: book})
+    // filters the book owned by the current user, and the books that doesnt have a review
+    const book = await Book.find({
+        owner: req.session.user._id,
+        Reviews: { $ne: null }
+    }).populate('Reviews')
+    const review = await Review.find()
+    res.render('reviews/index.ejs',{allbooks: book, allreview: review})
 })
 
-    
 router.delete('/:reviewId', isSignedIn, async (req, res) => {
     const review = await Review.findById(req.params.reviewId)
-    
+
     if (!review.owner.equals(req.session.user._id)) {
         return res.send("Action Not Allowed")
     }
-    
-    await Book.updateOne({ Reviews: Review._id }, { $pull: { Reviews: Review._id } })
+// it filters the books with null reviews so it doesnt get included in the update so there will be an error
+    await Book.updateOne({ Reviews: review._id }, { $unset: { Reviews: "" } })
+// delete the review itself from database
+    await review.deleteOne()
 
-    await Review.deleteOne()
-    
     res.redirect('/reviews')
 })
     
-   
-
-
 module.exports = router;
