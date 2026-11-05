@@ -14,7 +14,6 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
         reviewText: req.body.reviewText,
         owner: req.session.user._id,
     })  
-    // update the book reviews
     const updatedBook = await Book.findByIdAndUpdate(req.params.bookId, { Reviews: newReview._id })
     res.redirect('/reviews')
     console.log('updatedBook:', updatedBook);
@@ -55,8 +54,4 @@ router.put('/:reviewId', isSignedIn, async (req, res) => {
 })
 
 
-
-
-
-    
 module.exports = router;

@@ -8,6 +8,10 @@
 <body>
      <%- include('../partials/navbar') %>
      <h1> Books & Reviews</h1>
+     <form action="/reviews" method="get">
+        <input placeholder="Search" type="search" name="search">
+        <button>Search</button>
+     </form>
     <% for(let oneBook of allbooks){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
