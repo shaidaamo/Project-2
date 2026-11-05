@@ -25,6 +25,10 @@ router.get('/',isSignedIn,async(req,res)=>{
     console.log(allbooks)
     res.render('books/index.ejs',{books:allbooks})
 })
+router.get('/:bookId', isSignedIn, async(req,res)=>{
+    const allbooks = await Book.findById(req.params.bookId).populate('Reviews');
+    res.render('books/book-detelis.ejs',{books:allbooks})
+})
 
 router.get('/:bookId/edit', isSignedIn, async(req,res)=>{
     const foundBook = await Book.findById(req.params.bookId)

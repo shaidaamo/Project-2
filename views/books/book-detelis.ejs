@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <%- include('../partials/navbar') %>
+    <h1>Book Details</h1>
+         <% if(user._id == books.owner){ %>
+        <h3><%= books.title %> </h3>
+        <img src="<%= books.Cover %>" width="200">
+        <p>By <%= books.Author %></p>
+        <p>Summary: <%= books.Summary %> </p>
+        <% if(user._id == books.owner){ %> 
+        <p>Status: <%= books.StatusRightnow %></p>
+        <% if(String(books.StatusRightnow) === 'Finished Reading' && !books.Reviews){ %>
+            <a href="/reviews/<%= books._id %>/newReview">Write A Review</a>
+            <% } else if (books.Reviews) { %>
+                <p>Rating: <%= books.Reviews.Rating %> Out of 5</p>
+                <p>Review: <%= books.Reviews.reviewText %></p>
+        <a href="/reviews/<%= books.Reviews._id %>/edit">Edit Review</a>
+         <form action="/reviews/<%= books.Reviews._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Review</button>
+        </form>
+      
+           <% } %>
+            <br>
+             <form action="/books/<%= books._id %>?_method=DELETE" method="post">
+                <button>Delete Book</button>
+            </form>
+        <% } %>
+        <br>
+        <a href="/books/<%= books._id %>/edit">Update Your Book</a>
+    <% } %>
+</body>
+</html>
