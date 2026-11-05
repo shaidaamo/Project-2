@@ -17,11 +17,11 @@
         <p>Summary: <%= oneBook.Summary %> </p>
         <% if(user._id == oneBook.owner){ %> 
         <p>Status: <%= oneBook.StatusRightnow %></p>
-        <% if(String(oneBook.StatusRightnow) === 'Finished Reading'){ %>
+        <% if(String(oneBook.StatusRightnow) === 'Finished Reading' && !oneBook.Reviews){ %>
             <a href="/reviews/<%= oneBook._id %>/newReview">Write A Review</a>
-         <% }else if(oneBook.Review != []){ %>
-            <a href=""></a>
-            <% } %>
+            <% } else if (oneBook.Reviews) { %>
+    <a href="/reviews/<%= oneBook.Reviews._id %>/edit">Edit Review</a>
+<% } %>
             <br>
              <form action="/books/<%= oneBook._id %>?_method=DELETE" method="post">
                 <button>Delete Book</button>
