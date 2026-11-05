@@ -38,10 +38,16 @@ router.delete('/:reviewId', isSignedIn, async (req, res) => {
     }
 // it filters the books with null reviews so it doesnt get included in the update so there will be an error
     await Book.updateOne({ Reviews: review._id }, { $unset: { Reviews: "" } })
-// delete the review itself from database
+// delete the review itself from database 
     await review.deleteOne()
 
     res.redirect('/reviews')
 })
+
+router.get('/:reviewId/edit', isSignedIn, async (req, res) => {
+    const review = await Review.findById(req.params.reviewId)
+    res.render('reviews/edit-review.ejs',{allreviews:review})
+})
+
     
 module.exports = router;

@@ -20,8 +20,8 @@
         <% if(String(oneBook.StatusRightnow) === 'Finished Reading' && !oneBook.Reviews){ %>
             <a href="/reviews/<%= oneBook._id %>/newReview">Write A Review</a>
             <% } else if (oneBook.Reviews) { %>
-    <a href="/reviews/<%= oneBook.Reviews._id %>/edit">Edit Review</a>
-<% } %>
+        <a href="/reviews/<%= oneBook.Reviews._id %>/edit">Edit Review</a>
+           <% } %>
             <br>
              <form action="/books/<%= oneBook._id %>?_method=DELETE" method="post">
                 <button>Delete Book</button>
