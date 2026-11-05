@@ -20,13 +20,14 @@ router.post('/:bookId',isSignedIn, async (req,res)=>{
 })
 
 router.get('/',isSignedIn, async (req,res)=>{
-    // filters the book owned by the current user, and the books that doesnt have a review
+    // filters the books that doesnt have a review, populate username since it wont appaer
     const book = await Book.find({
-        owner: req.session.user._id,
         Reviews: { $ne: null }
-    }).populate('Reviews')
-    const review = await Review.find()
-    res.render('reviews/index.ejs',{allbooks: book, allreview: review})
+    }).populate({
+        path: 'Reviews',
+        populate: { path: 'owner', select: 'username' }
+    })
+    res.render('reviews/index.ejs',{allbooks: book})
 })
 
 router.delete('/:reviewId', isSignedIn, async (req, res) => {
