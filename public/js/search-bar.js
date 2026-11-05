@@ -8,10 +8,17 @@ function searchfeature(event){
     
     for(let book of booksElements){
         const bookTitleElement = book.querySelector('h3')
+        const authorElement = book.querySelector("#author")
         let wantedBook = bookTitleElement.textContent.toLowerCase()
+        let wantedAuthor = authorElement.textContent.toLowerCase()
         //console.log(wantedBook)
         //console.log(book)
         if(wantedBook.includes(input)){
+            book.style.display = ''
+        }else{
+            book.style.display = 'none'
+        }
+        if(wantedAuthor.includes(input)){
             book.style.display = ''
         }else{
             book.style.display = 'none'

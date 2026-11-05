@@ -9,12 +9,14 @@
 <body>
      <%- include('../partials/navbar') %>
      <h1> Books & Reviews</h1>
-        <input placeholder="Search" type="search" name="search" id="search-bar">
+        <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
     <% for(let oneBook of allbooks){ %>
         <div class="book">
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
+        <div id="author">
         <p>By <%= oneBook.Author %></p>
+        </div>
         <p>Rating: <%= oneBook.Reviews.Rating %> Out of 5</p>
         <p>Review: <%= oneBook.Reviews.reviewText %>  By <%= oneBook.Reviews.owner.username %></p>
         

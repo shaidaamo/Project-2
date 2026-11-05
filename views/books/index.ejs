@@ -9,13 +9,15 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>All Books</h1>
-   <input placeholder="Search" type="search" name="search" id="search-bar">
+   <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
     <% for(let oneBook of books){ %>
         <div class="book">
          <% if(user._id == oneBook.owner){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
+        <div id="author">
         <p>By <%= oneBook.Author %></p>
+        </div>
         <p>Summary: <%= oneBook.Summary %> </p>
         <% if(user._id == oneBook.owner){ %> 
         <p>Status: <%= oneBook.StatusRightnow %></p>
