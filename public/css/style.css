@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 h1 {
 text-align: center;
 }
@@ -12,12 +12,12 @@ body{
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-image: linear-gradient( rgba(232, 231, 229, 0.491),rgba(232, 231, 229, 0.491)), url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D');
+    background-image: linear-gradient( rgba(232, 231, 229, 0.491),rgba(232, 231, 229, 0.491)), url('background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover ;
-    font-family: 'Abril Fatface';
+    font-family: 'Yeseva One';
 }
 .sign {
     background-color: #f7eac2;
@@ -68,6 +68,8 @@ nav {
     gap: 20px;
     text-align: left;
     padding-left: 10px;
+    font-family: 'Yeseva One';
+    color:  #8b5e3c;
 }
 .sign label{
     font-size: 18px;
@@ -87,11 +89,85 @@ button {
     border: none;              
     border-radius: 6px;           
     transition: background-color 0.2s;
+      font-family: 'Yeseva One';
 }
 
 button:hover {
     background-color: #6f492e; 
     cursor: pointer;  
 }
-
-
+#welcome{
+    color: white;
+    background-color: rgba(171, 124, 89, 0.85);
+    width: 400px;
+    height: 150px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+#welcome a {
+     color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.newbook{
+       background-color: #f7eac2;
+    width: 600px;
+    height: 900px;
+    border: 2px solid #8b5e3c;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+    color:  #8b5e3c;
+}
+.newbook input{
+    margin: 5px 0 5px 0;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}
+.newbook select{
+    margin: 5px 0 5px 0;
+    width: 265px;
+    height: 35px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}
+#Summary {
+    height: 200px;
+     margin: 5px 0 5px 0;
+    width: 250px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}

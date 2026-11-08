@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create new book</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <%- include('../partials/navbar') %>
+    <div class="newbook">
     <h1>Add a New Book!</h1>
     <form action="/books" method="post">
        <label for="title">Book Title: </label>
@@ -14,7 +16,7 @@
 
         <label for="Cover">Book Cover Picture: </label>
         <input name="Cover" id="Cover" type="url" placeholder="Enter Image URL">
-
+<br>
         <label for="Type">Type: </label>
         <select name="Type" id="Type">
             <option value="E-book">E-book</option>
@@ -24,7 +26,7 @@
 
         <label for="Author">Author: </label>
         <input name="Author" id="Author" type="text">
-
+<br>
         <label for="StatusRightnow">Status: </label>
         <select name="StatusRightnow" id="StatusRightnow">
             <option value="To Read">To Read</option>
@@ -32,12 +34,12 @@
             <option value="Finished Reading">Finished Reading</option>
             <option value="Did Not Finish">Did Not Finish</option>
         </select>
-
+<br>
         <label for="Summary">Summary: </label>
-        <input name="Summary" id="Summary" type="text">
+        <textarea name="Summary" id="Summary" type="text"></textarea>
         
         <button>Add Book</button>
     </form>
-
+</div>
 </body>
 </html>
