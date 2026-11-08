@@ -64,7 +64,7 @@ button:hover {
 }
 .book{
     flex: 0 0 320px;
-    height: 480px;
+    height: 530px;
     padding: 10px;
     gap: 10px;
     text-align: center;

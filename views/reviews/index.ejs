@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/search-bar.js"></script>
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style2.css">
 </head>
 <body>
      <%- include('../partials/navbar') %>
      <h1> Books & Reviews</h1>
+     <div class="searchbar">
         <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
-    <% for(let oneBook of allbooks){ %>
+    </div>
+        <div class="book-container">
+        <% for(let oneBook of allbooks){ %>
         <div class="book">
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
@@ -28,5 +32,6 @@
         <% } %>
         </div>
         <% } %>
+    </div>
 </body>
 </html>
