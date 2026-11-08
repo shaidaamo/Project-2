@@ -12,6 +12,7 @@
         <h3><%= books.title %> </h3>
         <img src="<%= books.Cover %>" width="200">
         <p>By <%= books.Author %></p>
+        <p>Type : <%= books.Type %> </p>
         <p>Summary: <%= books.Summary %> </p>
         <% if(user._id == books.owner){ %> 
         <p>Status: <%= books.StatusRightnow %></p>

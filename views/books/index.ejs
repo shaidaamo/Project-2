@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Books</title>
+    <link rel="stylesheet" href="../css/style2.css">
     <script defer src="../js/search-bar.js"></script>
 </head>
 <body>
     <%- include('../partials/navbar') %>
     <h1>All Books</h1>
-   <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
+    <div class="searchbar">
+   <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar"></div>
+   <div class="book-container">
     <% for(let oneBook of books){ %>
         <div class="book">
          <% if(user._id == oneBook.owner){ %>
         <h3><%= oneBook.title %> </h3>
         <img src="<%= oneBook.Cover %>" width="200">
-        <div id="author">
+        <div class="author">
         <p>By <%= oneBook.Author %></p>
         </div>
-        <p>Summary: <%= oneBook.Summary %> </p>
-        <% if(user._id == oneBook.owner){ %> 
         <p>Status: <%= oneBook.StatusRightnow %></p>
         <a href="/books/<%= oneBook._id %>">Book Detelis</a>
     <% } %>
-    <% } %>
+
 </div>
 <% } %>
+</div>
 </body>
 </html>

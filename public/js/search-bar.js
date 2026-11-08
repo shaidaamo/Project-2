@@ -8,7 +8,7 @@ function searchfeature(event){
     
     for(let book of booksElements){
         const bookTitleElement = book.querySelector('h3')
-        const authorElement = book.querySelector("#author")
+        const authorElement = book.querySelector(".author")
         let wantedBook = bookTitleElement.textContent.toLowerCase()
         let wantedAuthor = authorElement.textContent.toLowerCase()
         //console.log(wantedBook)
