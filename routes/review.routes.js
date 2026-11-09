@@ -27,7 +27,8 @@ router.get('/',isSignedIn, async (req,res)=>{
         path: 'Reviews',
         populate: { path: 'owner', select: 'username' }
     })
-    res.render('reviews/index.ejs',{allbooks: book})
+    const review = await Review.find()
+    res.render('reviews/index.ejs',{allbooks: book,allReviews: review})
 })
 
 router.delete('/:reviewId', isSignedIn, async (req, res) => {

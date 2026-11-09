@@ -36,7 +36,7 @@ nav {
 }
 button {
    text-align: center;
-    width: 100px;              
+    width: 200px;              
     height: 38px;             
     background-color: #8b5e3c; 
     color: white;              
@@ -76,11 +76,18 @@ button:hover {
     justify-content: space-around;
     color: #8b5e3c;
     box-sizing: border-box;
+     max-height: 530px;     
+    overflow-y: auto;     
+    padding-right: 4px;
+    word-break: break-word;
 }
 .book a,
 .book p{
     margin: 0;
     max-width: 100%;
+}
+.book a{
+    color:  #8b5e3c;
 }
 .book img{
     width: 200px;
@@ -110,9 +117,34 @@ h1{
     font-family: 'Yeseva One';
     color:  #8b5e3c;
 }
-.book {
-    max-height: 530px;     
-    overflow-y: auto;     
-    padding-right: 4px;
-    word-break: break-word;
+.bookDetails{
+    background-color: #f7eac2;
+    border: 2px solid #8b5e3c;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: fit-content;
+    padding: 10px 10px 10px 10px;
+    margin: 30px auto;
+    color:  #8b5e3c;
+    text-align: justify;
+    font-size: 20px;
+}
+.linkBtn {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.linkBtn a {
+    color:  #8b5e3c;
+}
+#bookShow{
+    color: #8b5e3c;
+    text-align: center;
+    font-size: 30px;
 }

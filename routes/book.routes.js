@@ -21,7 +21,7 @@ router.post('/',isSignedIn, async (req,res)=>{
     res.redirect('/books')
 })
 router.get('/',isSignedIn,async(req,res)=>{
-    const allbooks = await Book.find();
+    const allbooks = await Book.find({ owner: req.session.user._id });
     console.log(allbooks)
     res.render('books/index.ejs',{books:allbooks})
 })
@@ -37,7 +37,7 @@ router.get('/:bookId/edit', isSignedIn, async(req,res)=>{
 
 router.put('/:bookId', isSignedIn, async(req,res)=>{
      const updatedBook = await Book.findByIdAndUpdate(req.params.bookId,req.body)
-    res.redirect('/books')
+    res.redirect('/books/:bookId')
     })
 router.delete('/:bookId',isSignedIn,async(req,res)=>{
     const foundBook = await Book.findById(req.params.bookId)

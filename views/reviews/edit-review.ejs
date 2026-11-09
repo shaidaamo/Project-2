@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Your Review</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
       <%- include('../partials/navbar') %>
+       <div class="newReview">
     <h1>Edit Your Review!</h1>
        <form action="/reviews/<%= allreviews._id %>?_method=PUT" method="post">
        <label for="Rating">Rating: </label>
@@ -16,6 +18,7 @@
         <textarea name="reviewText" id="reviewText"><%= allreviews.reviewText %></textarea>
 
         <button>Edit Review</button>
+    </div>
     </form>
 </body>
 </html>

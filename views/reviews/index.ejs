@@ -13,6 +13,9 @@
      <div class="searchbar">
         <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
     </div>
+    <% if(allReviews.length === 0){ %>
+        <p id="bookShow">No Reviews Here to Show Yet!</p>
+   <% }else{  %>
         <div class="book-container">
         <% for(let oneBook of allbooks){ %>
         <div class="book">
@@ -34,5 +37,6 @@
         </div>
         <% } %>
     </div>
+    <% } %>
 </body>
 </html>
