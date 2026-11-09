@@ -7,7 +7,8 @@ An app used to track your books and post reviews. The site is private to the use
 ## Screenshots
 ![all books page](<Screenshot (14).png>)
 ![books & reviews page](<Screenshot (15).png>)
-![adding a new book](<Screenshot (16).png>)
+![alt text](<Screenshot (17).png>)
+![alt text](<Screenshot (18).png>)
 ## Technologies Used
 1. HTML
 2. CSS
@@ -19,9 +20,15 @@ An app used to track your books and post reviews. The site is private to the use
 8. Method-Override
 
 ## Getting Started
-
-
-
+1. Create folder for your project and cd into it
+2. Clone The Project in your folder
+3. Create a .env file with the following 2 values of your database connection:
+```javascript
+MONGODB_URI=your-mongo-db-connection-string
+SESSION_SECRET=your-sectret-key
+PORT=3000
+```
+4. run npm i
 
 ## User Stories
 1. As a User, I Want to be Able to Add a New Book.
@@ -80,4 +87,5 @@ An app used to track your books and post reviews. The site is private to the use
 6. how many books user did read in a year or month (like achivements page).
 
 ## Credits
-Shaidaa S.Ali
+Shaidaa S.Ali 
+Shaidasayedali03@gmail.com
