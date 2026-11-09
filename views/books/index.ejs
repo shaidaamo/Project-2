@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="../css/style2.css">
+    <script defer src="../js/search-bar.js"></script>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+    <h1>All Books</h1>
+    <% if (books.length === 0) { %>
+    <p>No Books Here to Show Yet!</p>
+<% } else { %>
+    <div class="book-container">
+        <% for (let oneBook of books) { %>
+            <div class="book">
+                <h3><%= oneBook.title %></h3>
+                <img src="<%= oneBook.Cover %>" width="200">
+                <p>By <%= oneBook.Author %></p>
+                <p>Status: <%= oneBook.StatusRightnow %></p>
+                <a href="/books/<%= oneBook._id %>">Book Details</a>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+</body>
+</html>
