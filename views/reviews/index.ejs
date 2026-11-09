@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../js/search-bar.js"></script>
-    <title>Document</title>
+    <title>Reviews</title>
     <link rel="stylesheet" href="../css/style2.css">
 </head>
 <body>
@@ -22,8 +22,9 @@
         <p>By <%= oneBook.Author %></p>
         </div>
         <p>Rating: <%= oneBook.Reviews.Rating %> Out of 5</p>
-        <p>Review: <%= oneBook.Reviews.reviewText %>  By <%= oneBook.Reviews.owner.username %></p>
         
+        <p class="review">Review: <%= oneBook.Reviews.reviewText %>  By <%= oneBook.Reviews.owner.username %></p>
+       
         <% if(oneBook.owner._id == user._id){ %>
               <a href="/reviews/<%= oneBook.Reviews._id %>/edit">Edit Review</a>
          <form action="/reviews/<%= oneBook.Reviews._id %>?_method=DELETE" method="POST">

@@ -110,3 +110,9 @@ h1{
     font-family: 'Yeseva One';
     color:  #8b5e3c;
 }
+.book {
+    max-height: 530px;     
+    overflow-y: auto;     
+    padding-right: 4px;
+    word-break: break-word;
+}

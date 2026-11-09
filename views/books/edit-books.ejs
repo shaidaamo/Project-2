@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit Your Book</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
  <%- include('../partials/navbar') %>
+ <div class="newbook">
     <h1>Update Your Book!</h1>
     <form action="/books/<%= books._id %>?_method=PUT" method="post">
        <label for="title">Book Title: </label>
@@ -34,8 +36,9 @@
         </select>
 
         <label for="Summary">Summary: </label>
-        <input value="<%= books.Summary %>" name="Summary" id="Summary" type="text">
+        <textarea name="Summary" id="Summary" type="text"><%= books.Summary %></textarea>
         <button>Update Book</button>
     </form>
+</div>
 </body>
 </html>

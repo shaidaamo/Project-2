@@ -171,3 +171,64 @@ button:hover {
     font-family: 'Yeseva One';
      color:  #8b5e3c
 }
+.newReview{
+    background-color: #f7eac2;
+    width: 400px;
+    height: 600px;
+    border: 2px solid #8b5e3c;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+    color:  #8b5e3c;
+}
+.newReview input{
+    margin: 5px 0 5px 0;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding-left: 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}
+.newReview select{
+    margin: 5px 0 5px 0;
+    width: 265px;
+    height: 35px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}
+#reviewText{
+       height: 200px;
+     margin: 5px 0 5px 0;
+    width: 250px;
+    border: 1px solid #8b5e3c;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Yeseva One';
+     color:  #8b5e3c
+}

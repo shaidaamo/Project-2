@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Review</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
      <%- include('../partials/navbar') %>
+     <div class="newReview">
     <h1>Write A Review!</h1>
         <form action="/reviews/<%= book._id %>" method="post">
        <label for="Rating">Rating: </label>
        <input name="Rating" id="Rating" type="number" max="5" min="0" step="0.5">
 
         <label for="reviewText">Review: </label>
-        <input name="reviewText" id="reviewText">
+        <textarea name="reviewText" id="reviewText"></textarea>
 
         <button>Add Review</button>
     </form>
-
+</div>
 
 </body>
 </html>
