@@ -37,7 +37,7 @@ router.get('/:bookId/edit', isSignedIn, async(req,res)=>{
 
 router.put('/:bookId', isSignedIn, async(req,res)=>{
      const updatedBook = await Book.findByIdAndUpdate(req.params.bookId,req.body)
-    res.redirect('/books/:bookId')
+    res.redirect('/books')
     })
 router.delete('/:bookId',isSignedIn,async(req,res)=>{
     const foundBook = await Book.findById(req.params.bookId)

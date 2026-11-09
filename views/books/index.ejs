@@ -10,6 +10,9 @@
 <body>
     <%- include('../partials/navbar') %>
     <h1>All Books</h1>
+      <div class="searchbar">
+        <input placeholder="Search Title, Author..." type="search" name="search" id="search-bar">
+    </div>
     <% if (books.length === 0) { %>
     <p>No Books Here to Show Yet!</p>
 <% } else { %>
@@ -18,7 +21,9 @@
             <div class="book">
                 <h3><%= oneBook.title %></h3>
                 <img src="<%= oneBook.Cover %>" width="200">
+                  <div id="author">
                 <p>By <%= oneBook.Author %></p>
+                </div>
                 <p>Status: <%= oneBook.StatusRightnow %></p>
                 <a href="/books/<%= oneBook._id %>">Book Details</a>
             </div>
