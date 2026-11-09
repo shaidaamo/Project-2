@@ -32,13 +32,13 @@
                 <a href="/reviews/<%= books._id %>/newReview">Write A Review</a>
             <% } else if (books.Reviews) { %>
                 <a href="/reviews/<%= books.Reviews._id %>/edit">Edit Review</a>
-                <form action="/reviews/<%= books.Reviews._id %>?_method=DELETE" method="POST">
+                <form action="/reviews/<%= books.Reviews._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Delete this Review? This cannot be undone.')">
                     <button type="submit">Delete Review</button>
                 </form>
             <% } %>
 
             <a href="/books/<%= books._id %>/edit">Update Your Book</a>
-            <form action="/books/<%= books._id %>?_method=DELETE" method="POST">
+            <form action="/books/<%= books._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Delete this Book? This cannot be undone.')">
                 <button type="submit">Delete Book</button>
             </form>
         </div>
